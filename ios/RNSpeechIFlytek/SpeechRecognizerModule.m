@@ -78,9 +78,6 @@ RCT_EXPORT_METHOD(stop) {
 
 RCT_EXPORT_METHOD(setParameter: (NSString *) parameter
                   value: (NSString *) value) {
-    if ([parameter isEqualToString: IFlySpeechConstant.ASR_AUDIO_PATH]) {
-        value = [self getAbsolutePath: value];
-    }
     [self.iFlySpeechRecognizer setParameter: value forKey: parameter];
 }
 
