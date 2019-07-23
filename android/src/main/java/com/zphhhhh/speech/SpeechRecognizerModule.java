@@ -140,7 +140,7 @@ public class SpeechRecognizerModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void setParameter(String parameter, String value) {
         if (parameter.equals(SpeechConstant.ASR_AUDIO_PATH)) {
-            value = Environment.getExternalStorageDirectory() + value;
+            value = getReactApplicationContext().getCacheDir().getAbsolutePath() + '/' + value;
         }
         mIat.setParameter(parameter, value);
     }
